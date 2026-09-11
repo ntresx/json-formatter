@@ -27,9 +27,6 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
-      - name: Run PHPUnit
-        run: php vendor/bin/phpunit
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -39,8 +36,11 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Run JavaScript tests
-        run: npm run test:js
-
       - name: Build assets
         run: npm run build
+
+      - name: Run PHPUnit
+        run: php vendor/bin/phpunit
+
+      - name: Run JavaScript tests
+        run: npm run test:js
