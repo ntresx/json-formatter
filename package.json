@@ -1,0 +1,19 @@
+{
+    "name": "json-formatter",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "test:js": "node --test tests/js/*.test.js"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.3",
+        "laravel-vite-plugin": "^3.2.0",
+        "tailwindcss": "^4.3.3",
+        "vite": "^8.0.5"
+    },
+    "engines": {
+        "node": ">=20.19.0"
+    }
+}

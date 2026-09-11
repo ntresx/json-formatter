@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@source "../../resources/views";
+@source "../../resources/js";
+
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+:root { color-scheme: dark; }
+html { background: #09090b; }
+body { min-width: 320px; }
+button, select, textarea { -webkit-tap-highlight-color: transparent; }
+.json-editor { tab-size: 4; }
+
+.tool-button,
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border-radius: .65rem;
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    transition: border-color 140ms ease, background-color 140ms ease, color 140ms ease, opacity 140ms ease;
+}
+.tool-button { min-height: 2.5rem; padding: .625rem .875rem; border: 1px solid transparent; }
+.icon-button { min-height: 2rem; padding: .45rem .7rem; border: 1px solid #27272a; background: #18181b; color: #a1a1aa; }
+.tool-button:focus-visible, .icon-button:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #52525b; outline-offset: 2px; }
+.primary-button { border-color: #d4d4d8; background: #f4f4f5; color: #18181b; }
+.primary-button:hover:not(:disabled) { background: #e4e4e7; }
+.secondary-button { border-color: #27272a; background: #18181b; color: #d4d4d8; }
+.secondary-button:hover:not(:disabled), .icon-button:hover:not(:disabled) { border-color: #3f3f46; background: #27272a; color: #f4f4f5; }
+.ghost-button { color: #71717a; }
+.ghost-button:hover:not(:disabled) { background: #18181b; color: #d4d4d8; }
+.tool-button:disabled, .icon-button:disabled { cursor: not-allowed; opacity: .38; }
+
+.status-pill { display: inline-flex; align-items: center; min-height: 1.35rem; border-radius: 999px; padding: .15rem .5rem; font-size: .65rem; font-weight: 600; letter-spacing: .01em; }
+.status-idle { background: #18181b; color: #71717a; }
+.status-valid { background: rgba(16, 185, 129, .1); color: #6ee7b7; }
+.status-invalid { background: rgba(244, 63, 94, .1); color: #fda4af; }
+.status-working { background: rgba(161, 161, 170, .1); color: #a1a1aa; }
+
+@media (max-width: 1023px) { .json-editor { min-height: 320px; } }
+@media (prefers-reduced-motion: reduce) { .tool-button, .icon-button { transition: none; } }
